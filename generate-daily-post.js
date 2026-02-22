@@ -310,7 +310,7 @@ function generateHTML() {
             <div class="date">${date}</div>
 
             <div class="header">
-                <img src="wizard.png" alt="Wizard" class="wizard-image">
+                <img src="https://raw.githubusercontent.com/hondoclips/word-of-the-day/main/wizard.png" alt="Wizard" class="wizard-image">
                 <div class="logo">Word of the Day</div>
             </div>
 
