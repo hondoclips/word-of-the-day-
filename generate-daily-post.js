@@ -116,10 +116,12 @@ function generateHTML() {
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
+            height: 100vh;
+            overflow: hidden;
             background: #000000;
             font-family: 'Georgia', serif;
-            padding: 20px;
+            padding: 0;
+            margin: 0;
         }
 
         .instagram-post {
@@ -323,6 +325,18 @@ function generateHTML() {
             <div class="footer"></div>
         </div>
     </div>
+
+    <script>
+        // Scale post to fit viewport
+        function scalePost() {
+            const post = document.querySelector('.instagram-post');
+            const scale = Math.min(window.innerWidth / 1080, window.innerHeight / 1350);
+            post.style.transform = 'scale(' + scale + ')';
+            post.style.transformOrigin = 'center center';
+        }
+        scalePost();
+        window.addEventListener('resize', scalePost);
+    </script>
 
     <script>
         const canvas = document.getElementById('sparkles-canvas');
