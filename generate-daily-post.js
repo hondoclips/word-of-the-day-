@@ -320,9 +320,7 @@ function generateHTML() {
                 </div>
             </div>
 
-            <div class="footer">
-                <div class="cta">Learn a new word every day ✨</div>
-            </div>
+            <div class="footer"></div>
         </div>
     </div>
 
