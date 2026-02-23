@@ -193,19 +193,8 @@ function generateHTML() {
             opacity: 0.8;
         }
 
-        /* Subtle nebula glow */
         .fireplace-glow {
-            display: block !important;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background:
-                radial-gradient(ellipse at 20% 30%, rgba(30, 40, 80, 0.4) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 70%, rgba(20, 30, 60, 0.3) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 50%, rgba(10, 15, 40, 0.2) 0%, transparent 70%);
-            pointer-events: none;
+            display: none;
         }
 
         .fireplace-glow {
