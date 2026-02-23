@@ -125,35 +125,33 @@ function generateHTML() {
             left: 0;
             width: 100%;
             height: 100%;
-            background-image:
-                repeating-linear-gradient(0deg,
-                    rgba(255, 255, 255, 0.01) 0px,
-                    transparent 1px,
-                    transparent 2px,
-                    rgba(255, 255, 255, 0.01) 3px),
-                repeating-linear-gradient(90deg,
-                    rgba(255, 255, 255, 0.01) 0px,
-                    transparent 1px,
-                    transparent 2px,
-                    rgba(255, 255, 255, 0.01) 3px),
-                radial-gradient(2px 2px at 20px 30px, white, transparent),
-                radial-gradient(2px 2px at 60px 70px, white, transparent),
-                radial-gradient(1px 1px at 50px 50px, white, transparent),
-                radial-gradient(1px 1px at 130px 80px, white, transparent),
-                radial-gradient(2px 2px at 90px 10px, white, transparent),
-                radial-gradient(1px 1px at 10px 90px, white, transparent),
-                radial-gradient(1px 1px at 150px 40px, white, transparent),
-                radial-gradient(2px 2px at 180px 120px, white, transparent),
-                radial-gradient(1px 1px at 200px 20px, white, transparent),
-                radial-gradient(1px 1px at 220px 90px, white, transparent),
-                radial-gradient(2px 2px at 30px 150px, white, transparent),
-                radial-gradient(1px 1px at 100px 140px, white, transparent),
-                radial-gradient(1px 1px at 170px 160px, white, transparent),
-                radial-gradient(2px 2px at 240px 60px, white, transparent),
-                radial-gradient(1px 1px at 260px 130px, white, transparent);
-            background-size: 100% 100%, 100% 100%, 300px 200px;
-            background-repeat: no-repeat, no-repeat, repeat;
-            opacity: 0.35;
+            background:
+                radial-gradient(ellipse at 20% 30%, rgba(100, 100, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 70%, rgba(150, 100, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(2px 2px at 5% 10%, white, transparent),
+                radial-gradient(1px 1px at 15% 20%, white, transparent),
+                radial-gradient(3px 3px at 25% 15%, rgba(255,255,255,0.9), transparent),
+                radial-gradient(1px 1px at 35% 25%, white, transparent),
+                radial-gradient(2px 2px at 45% 30%, white, transparent),
+                radial-gradient(1px 1px at 55% 35%, rgba(255,255,255,0.8), transparent),
+                radial-gradient(3px 3px at 65% 40%, white, transparent),
+                radial-gradient(2px 2px at 75% 45%, rgba(255,255,255,0.9), transparent),
+                radial-gradient(1px 1px at 85% 50%, white, transparent),
+                radial-gradient(2px 2px at 10% 60%, white, transparent),
+                radial-gradient(3px 3px at 20% 65%, rgba(255,255,255,0.85), transparent),
+                radial-gradient(1px 1px at 30% 70%, white, transparent),
+                radial-gradient(2px 2px at 40% 75%, rgba(255,255,255,0.9), transparent),
+                radial-gradient(1px 1px at 50% 80%, white, transparent),
+                radial-gradient(3px 3px at 60% 85%, white, transparent),
+                radial-gradient(2px 2px at 70% 90%, rgba(255,255,255,0.8), transparent),
+                radial-gradient(1px 1px at 80% 95%, white, transparent),
+                radial-gradient(2px 2px at 90% 5%, white, transparent),
+                radial-gradient(1px 1px at 12% 45%, white, transparent),
+                radial-gradient(2px 2px at 88% 15%, rgba(255,255,255,0.9), transparent),
+                radial-gradient(3px 3px at 42% 55%, white, transparent),
+                radial-gradient(1px 1px at 68% 25%, white, transparent),
+                #000000;
+            opacity: 1;
         }
 
         .fireplace-glow {
@@ -310,7 +308,7 @@ function generateHTML() {
             <div class="date">${date}</div>
 
             <div class="header">
-                <img src="https://raw.githubusercontent.com/hondoclips/word-of-the-day/main/wizard.png" alt="Wizard" class="wizard-image">
+                <img src="/wizard.png" alt="Wizard" class="wizard-image">
                 <div class="logo">Word of the Day</div>
             </div>
 
