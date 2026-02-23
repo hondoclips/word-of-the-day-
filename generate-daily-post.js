@@ -138,64 +138,14 @@ function generateHTML() {
             left: 0;
             width: 100%;
             height: 100%;
-            background-image:
-                radial-gradient(3px 3px at 2% 5%, white, transparent),
-                radial-gradient(5px 5px at 10% 12%, white, transparent),
-                radial-gradient(3px 3px at 19% 3%, white, transparent),
-                radial-gradient(4px 4px at 28% 18%, white, transparent),
-                radial-gradient(3px 3px at 38% 8%, white, transparent),
-                radial-gradient(5px 5px at 48% 2%, white, transparent),
-                radial-gradient(3px 3px at 57% 14%, white, transparent),
-                radial-gradient(4px 4px at 67% 6%, white, transparent),
-                radial-gradient(3px 3px at 76% 20%, white, transparent),
-                radial-gradient(5px 5px at 86% 10%, white, transparent),
-                radial-gradient(3px 3px at 95% 4%, white, transparent),
-                radial-gradient(4px 4px at 5% 25%, white, transparent),
-                radial-gradient(3px 3px at 14% 32%, white, transparent),
-                radial-gradient(5px 5px at 24% 28%, white, transparent),
-                radial-gradient(3px 3px at 34% 36%, white, transparent),
-                radial-gradient(4px 4px at 44% 22%, white, transparent),
-                radial-gradient(3px 3px at 54% 30%, white, transparent),
-                radial-gradient(5px 5px at 63% 38%, white, transparent),
-                radial-gradient(3px 3px at 73% 26%, white, transparent),
-                radial-gradient(4px 4px at 82% 34%, white, transparent),
-                radial-gradient(3px 3px at 92% 28%, white, transparent),
-                radial-gradient(5px 5px at 8% 48%, white, transparent),
-                radial-gradient(3px 3px at 18% 54%, white, transparent),
-                radial-gradient(4px 4px at 29% 46%, white, transparent),
-                radial-gradient(3px 3px at 39% 52%, white, transparent),
-                radial-gradient(5px 5px at 50% 44%, white, transparent),
-                radial-gradient(3px 3px at 60% 56%, white, transparent),
-                radial-gradient(4px 4px at 70% 50%, white, transparent),
-                radial-gradient(3px 3px at 80% 42%, white, transparent),
-                radial-gradient(5px 5px at 91% 58%, white, transparent),
-                radial-gradient(3px 3px at 3% 68%, white, transparent),
-                radial-gradient(4px 4px at 13% 62%, white, transparent),
-                radial-gradient(3px 3px at 23% 74%, white, transparent),
-                radial-gradient(5px 5px at 33% 66%, white, transparent),
-                radial-gradient(3px 3px at 43% 78%, white, transparent),
-                radial-gradient(4px 4px at 53% 70%, white, transparent),
-                radial-gradient(3px 3px at 62% 64%, white, transparent),
-                radial-gradient(5px 5px at 72% 76%, white, transparent),
-                radial-gradient(3px 3px at 82% 68%, white, transparent),
-                radial-gradient(4px 4px at 93% 72%, white, transparent),
-                radial-gradient(3px 3px at 7% 86%, white, transparent),
-                radial-gradient(5px 5px at 17% 92%, white, transparent),
-                radial-gradient(3px 3px at 27% 84%, white, transparent),
-                radial-gradient(4px 4px at 37% 96%, white, transparent),
-                radial-gradient(3px 3px at 47% 88%, white, transparent),
-                radial-gradient(5px 5px at 58% 94%, white, transparent),
-                radial-gradient(3px 3px at 68% 82%, white, transparent),
-                radial-gradient(4px 4px at 78% 90%, white, transparent),
-                radial-gradient(3px 3px at 88% 86%, white, transparent),
-                radial-gradient(5px 5px at 97% 96%, white, transparent);
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
-            opacity: 0.8;
+            pointer-events: none;
         }
 
-        .fireplace-glow {
-            display: none;
+        .star {
+            position: absolute;
+            color: #ffe87c;
+            line-height: 1;
+            pointer-events: none;
         }
 
         .fireplace-glow {
@@ -345,7 +295,58 @@ function generateHTML() {
 </head>
 <body>
     <div class="instagram-post">
-        <div class="wood-texture"></div>
+        <div class="wood-texture">
+            <span class="star" style="left:2%;top:5%;font-size:18px;">✦</span>
+            <span class="star" style="left:10%;top:12%;font-size:24px;">✦</span>
+            <span class="star" style="left:19%;top:3%;font-size:16px;">✦</span>
+            <span class="star" style="left:28%;top:18%;font-size:22px;">✦</span>
+            <span class="star" style="left:38%;top:8%;font-size:18px;">✦</span>
+            <span class="star" style="left:48%;top:2%;font-size:26px;">✦</span>
+            <span class="star" style="left:57%;top:14%;font-size:16px;">✦</span>
+            <span class="star" style="left:67%;top:6%;font-size:20px;">✦</span>
+            <span class="star" style="left:76%;top:20%;font-size:18px;">✦</span>
+            <span class="star" style="left:86%;top:10%;font-size:24px;">✦</span>
+            <span class="star" style="left:95%;top:4%;font-size:16px;">✦</span>
+            <span class="star" style="left:5%;top:25%;font-size:20px;">✦</span>
+            <span class="star" style="left:14%;top:32%;font-size:16px;">✦</span>
+            <span class="star" style="left:24%;top:28%;font-size:26px;">✦</span>
+            <span class="star" style="left:34%;top:36%;font-size:18px;">✦</span>
+            <span class="star" style="left:44%;top:22%;font-size:22px;">✦</span>
+            <span class="star" style="left:54%;top:30%;font-size:16px;">✦</span>
+            <span class="star" style="left:63%;top:38%;font-size:24px;">✦</span>
+            <span class="star" style="left:73%;top:26%;font-size:18px;">✦</span>
+            <span class="star" style="left:82%;top:34%;font-size:20px;">✦</span>
+            <span class="star" style="left:92%;top:28%;font-size:16px;">✦</span>
+            <span class="star" style="left:8%;top:48%;font-size:24px;">✦</span>
+            <span class="star" style="left:18%;top:54%;font-size:16px;">✦</span>
+            <span class="star" style="left:29%;top:46%;font-size:20px;">✦</span>
+            <span class="star" style="left:39%;top:52%;font-size:18px;">✦</span>
+            <span class="star" style="left:50%;top:44%;font-size:26px;">✦</span>
+            <span class="star" style="left:60%;top:56%;font-size:16px;">✦</span>
+            <span class="star" style="left:70%;top:50%;font-size:22px;">✦</span>
+            <span class="star" style="left:80%;top:42%;font-size:18px;">✦</span>
+            <span class="star" style="left:91%;top:58%;font-size:24px;">✦</span>
+            <span class="star" style="left:3%;top:68%;font-size:16px;">✦</span>
+            <span class="star" style="left:13%;top:62%;font-size:20px;">✦</span>
+            <span class="star" style="left:23%;top:74%;font-size:18px;">✦</span>
+            <span class="star" style="left:33%;top:66%;font-size:26px;">✦</span>
+            <span class="star" style="left:43%;top:78%;font-size:16px;">✦</span>
+            <span class="star" style="left:53%;top:70%;font-size:22px;">✦</span>
+            <span class="star" style="left:62%;top:64%;font-size:18px;">✦</span>
+            <span class="star" style="left:72%;top:76%;font-size:24px;">✦</span>
+            <span class="star" style="left:82%;top:68%;font-size:16px;">✦</span>
+            <span class="star" style="left:93%;top:72%;font-size:20px;">✦</span>
+            <span class="star" style="left:7%;top:86%;font-size:18px;">✦</span>
+            <span class="star" style="left:17%;top:92%;font-size:26px;">✦</span>
+            <span class="star" style="left:27%;top:84%;font-size:16px;">✦</span>
+            <span class="star" style="left:37%;top:96%;font-size:22px;">✦</span>
+            <span class="star" style="left:47%;top:88%;font-size:18px;">✦</span>
+            <span class="star" style="left:58%;top:94%;font-size:24px;">✦</span>
+            <span class="star" style="left:68%;top:82%;font-size:16px;">✦</span>
+            <span class="star" style="left:78%;top:90%;font-size:20px;">✦</span>
+            <span class="star" style="left:88%;top:86%;font-size:18px;">✦</span>
+            <span class="star" style="left:97%;top:96%;font-size:26px;">✦</span>
+        </div>
         <div class="fireplace-glow"></div>
 
         <div class="content">
