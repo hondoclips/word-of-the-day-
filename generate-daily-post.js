@@ -131,21 +131,14 @@ function generateHTML() {
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
         }
 
-        /* Stars layer */
-        .wood-texture {
+        #sparkles-canvas {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             pointer-events: none;
-        }
-
-        .star {
-            position: absolute;
-            color: #ffe87c;
-            line-height: 1;
-            pointer-events: none;
+            z-index: 1;
         }
 
         .fireplace-glow {
@@ -295,58 +288,7 @@ function generateHTML() {
 </head>
 <body>
     <div class="instagram-post">
-        <div class="wood-texture">
-            <span class="star" style="left:2%;top:5%;font-size:18px;">✦</span>
-            <span class="star" style="left:10%;top:12%;font-size:24px;">✦</span>
-            <span class="star" style="left:19%;top:3%;font-size:16px;">✦</span>
-            <span class="star" style="left:28%;top:18%;font-size:22px;">✦</span>
-            <span class="star" style="left:38%;top:8%;font-size:18px;">✦</span>
-            <span class="star" style="left:48%;top:2%;font-size:26px;">✦</span>
-            <span class="star" style="left:57%;top:14%;font-size:16px;">✦</span>
-            <span class="star" style="left:67%;top:6%;font-size:20px;">✦</span>
-            <span class="star" style="left:76%;top:20%;font-size:18px;">✦</span>
-            <span class="star" style="left:86%;top:10%;font-size:24px;">✦</span>
-            <span class="star" style="left:95%;top:4%;font-size:16px;">✦</span>
-            <span class="star" style="left:5%;top:25%;font-size:20px;">✦</span>
-            <span class="star" style="left:14%;top:32%;font-size:16px;">✦</span>
-            <span class="star" style="left:24%;top:28%;font-size:26px;">✦</span>
-            <span class="star" style="left:34%;top:36%;font-size:18px;">✦</span>
-            <span class="star" style="left:44%;top:22%;font-size:22px;">✦</span>
-            <span class="star" style="left:54%;top:30%;font-size:16px;">✦</span>
-            <span class="star" style="left:63%;top:38%;font-size:24px;">✦</span>
-            <span class="star" style="left:73%;top:26%;font-size:18px;">✦</span>
-            <span class="star" style="left:82%;top:34%;font-size:20px;">✦</span>
-            <span class="star" style="left:92%;top:28%;font-size:16px;">✦</span>
-            <span class="star" style="left:8%;top:48%;font-size:24px;">✦</span>
-            <span class="star" style="left:18%;top:54%;font-size:16px;">✦</span>
-            <span class="star" style="left:29%;top:46%;font-size:20px;">✦</span>
-            <span class="star" style="left:39%;top:52%;font-size:18px;">✦</span>
-            <span class="star" style="left:50%;top:44%;font-size:26px;">✦</span>
-            <span class="star" style="left:60%;top:56%;font-size:16px;">✦</span>
-            <span class="star" style="left:70%;top:50%;font-size:22px;">✦</span>
-            <span class="star" style="left:80%;top:42%;font-size:18px;">✦</span>
-            <span class="star" style="left:91%;top:58%;font-size:24px;">✦</span>
-            <span class="star" style="left:3%;top:68%;font-size:16px;">✦</span>
-            <span class="star" style="left:13%;top:62%;font-size:20px;">✦</span>
-            <span class="star" style="left:23%;top:74%;font-size:18px;">✦</span>
-            <span class="star" style="left:33%;top:66%;font-size:26px;">✦</span>
-            <span class="star" style="left:43%;top:78%;font-size:16px;">✦</span>
-            <span class="star" style="left:53%;top:70%;font-size:22px;">✦</span>
-            <span class="star" style="left:62%;top:64%;font-size:18px;">✦</span>
-            <span class="star" style="left:72%;top:76%;font-size:24px;">✦</span>
-            <span class="star" style="left:82%;top:68%;font-size:16px;">✦</span>
-            <span class="star" style="left:93%;top:72%;font-size:20px;">✦</span>
-            <span class="star" style="left:7%;top:86%;font-size:18px;">✦</span>
-            <span class="star" style="left:17%;top:92%;font-size:26px;">✦</span>
-            <span class="star" style="left:27%;top:84%;font-size:16px;">✦</span>
-            <span class="star" style="left:37%;top:96%;font-size:22px;">✦</span>
-            <span class="star" style="left:47%;top:88%;font-size:18px;">✦</span>
-            <span class="star" style="left:58%;top:94%;font-size:24px;">✦</span>
-            <span class="star" style="left:68%;top:82%;font-size:16px;">✦</span>
-            <span class="star" style="left:78%;top:90%;font-size:20px;">✦</span>
-            <span class="star" style="left:88%;top:86%;font-size:18px;">✦</span>
-            <span class="star" style="left:97%;top:96%;font-size:26px;">✦</span>
-        </div>
+        <canvas id="sparkles-canvas"></canvas>
         <div class="fireplace-glow"></div>
 
         <div class="content">
@@ -383,6 +325,60 @@ function generateHTML() {
             </div>
         </div>
     </div>
+
+    <script>
+        const canvas = document.getElementById('sparkles-canvas');
+        const ctx = canvas.getContext('2d');
+        const W = 1080, H = 1350;
+        canvas.width = W;
+        canvas.height = H;
+
+        const COUNT = 180;
+        const particles = [];
+
+        function rand(min, max) { return Math.random() * (max - min) + min; }
+
+        function drawSparkle(x, y, size, opacity) {
+            ctx.save();
+            ctx.globalAlpha = opacity;
+            ctx.fillStyle = '#ffe87c';
+            ctx.translate(x, y);
+            ctx.beginPath();
+            for (let i = 0; i < 8; i++) {
+                const angle = (i / 8) * Math.PI * 2;
+                const r = i % 2 === 0 ? size : size * 0.3;
+                const px = Math.cos(angle - Math.PI / 2) * r;
+                const py = Math.sin(angle - Math.PI / 2) * r;
+                i === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py);
+            }
+            ctx.closePath();
+            ctx.fill();
+            ctx.restore();
+        }
+
+        for (let i = 0; i < COUNT; i++) {
+            particles.push({
+                x: rand(0, W),
+                y: rand(0, H),
+                size: rand(1.5, 4),
+                opacity: rand(0, 1),
+                speed: rand(0.004, 0.012),
+                dir: Math.random() > 0.5 ? 1 : -1
+            });
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, W, H);
+            for (const p of particles) {
+                p.opacity += p.speed * p.dir;
+                if (p.opacity >= 1) { p.opacity = 1; p.dir = -1; }
+                if (p.opacity <= 0) { p.opacity = 0; p.dir = 1; }
+                drawSparkle(p.x, p.y, p.size, p.opacity);
+            }
+            requestAnimationFrame(animate);
+        }
+        animate();
+    </script>
 </body>
 </html>`;
 
