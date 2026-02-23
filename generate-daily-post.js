@@ -341,7 +341,7 @@ function generateHTML() {
         function drawSparkle(x, y, size, opacity) {
             ctx.save();
             ctx.globalAlpha = opacity;
-            ctx.fillStyle = '#ffe87c';
+            ctx.fillStyle = '#fff8e7';
             ctx.translate(x, y);
             ctx.beginPath();
             for (let i = 0; i < 8; i++) {
